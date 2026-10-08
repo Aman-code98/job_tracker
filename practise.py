@@ -1,19 +1,24 @@
-fruits = ['Apple', 'Banana']
-fruits.append('Mango')  # .append() adds an item to the end of the list
-print(fruits)
-print(len(fruits)) # gives you the length of the items in the list.
+#     # Ask for a favorite color. Keep asking until the answer isn’t blank.
+# # Ask for a size, accepting only small, medium, or large, so that " LARGE " also works.
 
-jobs = [{'company': 'Company A', 'title': 'Job Title A', 'status': 'Status A'}]
+# sizes = ['small', 'medium', 'large']
+# size = input('what is  your Size? : ').strip().lower()
 
-# saving the data to the file.
-import json
-data = ['apple', 'banana']
-with open( "fruits.json", "w") as file: 
-    json.dump(data, file)
+# while size not in sizes:
+#     print('Invalid size. Please enter small, medium, or large.')
+#     size = input('what is  your Size? : ').strip().lower()
+# print(f' The size you have entered is {size}')
 
 
-# Reading the data from the json file and loading it into a variable called data.
-import json
-with open('fruits.json', 'w') as file: # here file is a nickname for 
-    data = json.load(file)
-    print(data)
+movies = ["The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction", "Forrest Gump"]
+
+for movie in movies:
+    print(movie)
+
+people = [{'name': 'Aman', 'age': 27},
+         {'name': 'Max', 'age': 30},
+         {'name': 'John', 'age': 25}
+         ]
+
+for index, name in enumerate(people, start = 1):
+    print(index , name['name'], name['age'])
