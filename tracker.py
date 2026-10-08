@@ -1,10 +1,23 @@
-# 1. Ask for company
+import os
+import json
+
+if os.path.exists('jobs.json'):
+    with open('jobs.json', 'r') as file:
+        jobs = json.load(file)
+else:
+    jobs = []
+
 company = input("Enter the company name: ")
-# 2. Ask for title
 title = input("Enter the job title: ")
-# 3. Ask for status
-status = input("Enter the job status: ")
-# 4. Put them in a dictionary called job
-job = {'company': company, 'title': title, 'status': status}
-# 5. Print the job
-print(job)
+status = input("Enter the job status (applied, interviewing, offer, rejected): ")
+
+jobs.append({
+    "company": company,
+    "title": title,
+    "status": status
+})
+
+with open('jobs.json', 'w') as file:
+    json.dump(jobs, file)
+
+print('jobs saved', len(jobs))
